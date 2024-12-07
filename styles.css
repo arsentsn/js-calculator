@@ -3,7 +3,7 @@
 }
 
 body {
-  background: rgb(248, 185, 185);
+  background: rgb(192, 192, 192);
   box-sizing: border-box;
   font-family: 'Orbitron';
   font-weight: 500;
@@ -18,12 +18,15 @@ body {
   height: 340px;
   width: 251px;
   box-sizing: border-box;
+  background: rgb(248, 185, 185);
 }
 
-.screen {
+#display {
   width: 200px;
   height: 30px;
   margin: 10px 25px;
+  text-align: right;
+  padding: 4px 10px 0 0;
 }
 
 .button-layout {
