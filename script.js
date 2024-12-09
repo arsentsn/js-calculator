@@ -17,6 +17,10 @@ document.querySelectorAll('.button-layout button').forEach(button => {
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
 
+let temp = 0
+let clear = false
+let operator
+
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const value = button.getAttribute('data-value');
@@ -24,13 +28,49 @@ buttons.forEach(button => {
     console.log(value)
 
     if (action === 'clear') {
-      display.textContent = '0'; // Reset the display
-    } else {
-      if (display.textContent === '0') {
-        display.textContent = value; // Replace the initial "0"
+      display.innerHTML = '0'; // Reset the display
+      let operator
+    } else if (action === 'backspace') {
+      display.innerHTML = Math.floor(display.innerHTML / 10);
+    } else if (action === 'add') {
+      temp = display.innerHTML
+      operator = '+'
+      clear = true
+    } else if (action === 'calculate') {
+      if (operator === '+') {
+        display.innerHTML = Number(temp) + Number(display.innerHTML);
+      } else if (operator === '-') {
+        display.innerHTML = Number(temp) - Number(display.innerHTML);
+      } else if (operator === '*') {
+        display.innerHTML = Number(temp) * Number(display.innerHTML);
+      } else if (operator === ':') {
+        display.innerHTML = Number(temp) / Number(display.innerHTML);
       } else {
-        display.textContent += value; // Append the new character
+        console.error("Unknown operator:", operator);
+        display.innerHTML = display.innerHTML; // Keep the current value if operator is invalid
       }
+
+    } else if (action === 'multiply') {
+
+    } else if (action === 'divide') {
+
+    } else if (action === 'percent') {
+
+    } else if (action === 'dot') {
+
+    } else if (action === 'party') {
+      confetti()
+    } else {
+      if (clear) {
+        display.innerHTML = 0
+        clear = false
+      }
+      if (display.innerHTML === '0') {
+        display.innerHTML = value; // 0
+      } else {
+        display.innerHTML += value; // append number
+      }
+
     }
   });
 });
