@@ -15,17 +15,18 @@ body {
 }
 
 .container {
-  height: 340px;
-  width: 251px;
+  height: 500px;
+  width: 370px;
   box-sizing: border-box;
   background: rgb(248, 185, 185);
 }
 
 #display {
-  width: 200px;
-  height: 30px;
-  margin: 10px 25px;
+  width: 300px;
+  height: 50px;
+  margin: 10px 34px;
   text-align: right;
+  font-size: 1.6em;
   padding: 4px 10px 0 0;
   background-color: rgb(228, 180, 180);
   overflow: hidden;
@@ -34,21 +35,22 @@ body {
 .button-layout {
   display: grid;
   box-sizing: border-box;
-  height: 281px;
+  height: 400px;
+  width: 340px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 16px 10px;
-  padding: 2px 6px;
+  gap: 16px 14px;
+  margin: 2px 12px;
   border: none;
 }
 
 button {
   box-sizing: border-box;
-  font-size: 1em;
   cursor: pointer;
   background-color: rgb(228, 180, 180);
   font-family: inherit;
   font-weight: inherit;
+  font-size: 1.6em;
   color: inherit;
   box-shadow: 3px 3px rgb(192, 192, 192);
 }

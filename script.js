@@ -36,6 +36,10 @@ buttons.forEach(button => {
       temp = display.innerHTML
       operator = '+'
       clear = true
+    } else if (action === 'subtract') {
+      temp = display.innerHTML
+      operator = '-'
+      clear = true
     } else if (action === 'calculate') {
       if (operator === '+') {
         display.innerHTML = Number(temp) + Number(display.innerHTML);
@@ -43,19 +47,27 @@ buttons.forEach(button => {
         display.innerHTML = Number(temp) - Number(display.innerHTML);
       } else if (operator === '*') {
         display.innerHTML = Number(temp) * Number(display.innerHTML);
-      } else if (operator === ':') {
+      } else if (operator === '/') {
         display.innerHTML = Number(temp) / Number(display.innerHTML);
+      } else if (operator === '%') {
+        display.innerHTML = Number(temp) / 100;
       } else {
         console.error("Unknown operator:", operator);
         display.innerHTML = display.innerHTML; // Keep the current value if operator is invalid
       }
 
     } else if (action === 'multiply') {
-
+      temp = display.innerHTML
+      operator = '*'
+      clear = true
     } else if (action === 'divide') {
-
+      temp = display.innerHTML
+      operator = '/'
+      clear = true
     } else if (action === 'percent') {
-
+      temp = display.innerHTML
+      operator = '%'
+      clear = true
     } else if (action === 'dot') {
 
     } else if (action === 'party') {
